@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>balentymes</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+        
+    <body>
+        
+    <script>
+        console.log("Js is running");
+
+        function createHeart(){
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.textContent = "💖";
+
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 500);
+        </script>
+
+        <img src="mayncraft.jpg" alt="left photo" class="side-photo left-photo">
+
+        <div class="invitation-card">
+            <h1>Will you be my valentine?</h1>
+            <p class="message">
+                Halooo, poide ba ikaw maging valentine kes?
+            </p>
+            <div class="info">
+                <p><strong>Date: </strong>Febuary 14th</p>
+                <p><strong>Time: </strong>Any time</p>
+                <p><strong>Location: </strong>Anywhere</p>
+            </div>
+
+            <a href="#" class="btn yes-btn" id="yesBtn">Yes</a>
+            <a href="#" class="btn no-btn" id="noBtn">No</a>
+
+            <div class="response-message" id="responseMessage"></div>
+            
+        </div>
+
+        <script>
+            document.getElementById("yesBtn").addEventListener("click", function(e) {
+            e.preventDefault();
+            alert("Yeheyyy");
+        });
+
+        document.getElementById("noBtn").addEventListener("click", function(e) {
+            e.preventDefault();
+            alert("Ay omkeyy");
+        });
+        </script>
+    </body>
+</html>
